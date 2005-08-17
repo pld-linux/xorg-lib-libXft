@@ -17,6 +17,11 @@ BuildRequires:	xorg-lib-libXrender-devel
 BuildRequires:	libtool
 BuildRequires:	pkg-config
 BuildRequires:	xorg-util-util-macros
+Obsoletes:	XFree86-xft
+Obsoletes:	XFree86-xft2
+Obsoletes:	Xft
+Obsoletes:	libXft
+Obsoletes:	xft
 BuildRoot:	%{tmpdir}/libXft-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -36,6 +41,11 @@ Group:		X11/Development/Libraries
 Requires:	xorg-lib-libXft = %{version}-%{release}
 Requires:	fontconfig-devel
 Requires:	xorg-lib-libXrender-devel
+Obsoletes:	XFree86-xft-devel
+Obsoletes:	XFree86-xft2-devel
+Obsoletes:	Xft-devel
+Obsoletes:	libXft-devel
+Obsoletes:	xft-devel
 
 %description devel
 Xft is a font rendering library for X.
@@ -55,6 +65,10 @@ Summary:	Static libXft libraries
 Summary(pl):	Biblioteki statyczne libXft
 Group:		Development/Libraries
 Requires:	xorg-lib-libXft-devel = %{version}-%{release}
+Obsoletes:	XFree86-xft-static
+Obsoletes:	Xft-static
+Obsoletes:	libXft-static
+Obsoletes:	xft-static
 
 %description static
 Xft is a font rendering library for X.

@@ -1,5 +1,3 @@
-
-#
 Summary:	X Font Rendering library
 Summary(pl):	Biblioteka do renderowania fontów
 Name:		xorg-lib-libXft
@@ -13,16 +11,16 @@ URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fontconfig-devel
-BuildRequires:	xorg-lib-libXrender-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
+BuildRequires:	xorg-lib-libXrender-devel
 BuildRequires:	xorg-util-util-macros
 Obsoletes:	XFree86-xft
 Obsoletes:	XFree86-xft2
 Obsoletes:	Xft
 Obsoletes:	libXft
 Obsoletes:	xft
-BuildRoot:	%{tmpdir}/libXft-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
@@ -33,12 +31,11 @@ Xft is a font rendering library for X.
 %description -l pl
 Xft jest bibliotek± s³u¿±c± do renderowania fontów dla X Window.
 
-
 %package devel
 Summary:	Header files libXft development
 Summary(pl):	Pliki nag³ówkowe do biblioteki libXft
 Group:		X11/Development/Libraries
-Requires:	xorg-lib-libXft = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 Requires:	fontconfig-devel
 Requires:	xorg-lib-libXrender-devel
 Obsoletes:	XFree86-xft-devel
@@ -59,12 +56,11 @@ Xft jest bibliotek± s³u¿±c± do renderowania fontów dla X Window.
 Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
 u¿ywaj±cych biblioteki libXft.
 
-
 %package static
-Summary:	Static libXft libraries
-Summary(pl):	Biblioteki statyczne libXft
-Group:		Development/Libraries
-Requires:	xorg-lib-libXft-devel = %{version}-%{release}
+Summary:	Static libXft library
+Summary(pl):	Biblioteka statyczna libXft
+Group:		X11/Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	XFree86-xft-static
 Obsoletes:	Xft-static
 Obsoletes:	libXft-static
@@ -80,10 +76,8 @@ Xft jest bibliotek± s³u¿±c± do renderowania fontów dla X Window.
 
 Pakiet zawiera statyczn± bibliotekê libXft.
 
-
 %prep
 %setup -q -n libXft-%{version}
-
 
 %build
 %{__libtoolize}
@@ -107,23 +101,20 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
-%attr(755,root,wheel) %{_libdir}/libXft.so.*
-
+%attr(755,root,root) %{_libdir}/libXft.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,wheel) %{_bindir}/xft-config
-%{_includedir}/X11/Xft/*.h
+%attr(755,root,root) %{_bindir}/xft-config
+%attr(755,root,root) %{_libdir}/libXft.so
 %{_libdir}/libXft.la
-%attr(755,root,wheel) %{_libdir}/libXft.so
+%{_includedir}/X11/Xft/*.h
 %{_pkgconfigdir}/xft.pc
 %{_mandir}/man1/*.1*
 %{_mandir}/man3/*.3*
-
 
 %files static
 %defattr(644,root,root,755)

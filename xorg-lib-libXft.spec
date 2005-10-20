@@ -108,6 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xft-config
 %attr(755,root,root) %{_libdir}/libXft.so
 %{_libdir}/libXft.la
+%dir %{_includedir}/X11/Xft
 %{_includedir}/X11/Xft/*.h
 %{_pkgconfigdir}/xft.pc
 %{_mandir}/man1/*.1*

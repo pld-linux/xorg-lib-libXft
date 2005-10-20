@@ -1,19 +1,19 @@
 Summary:	X Font Rendering library
 Summary(pl):	Biblioteka do renderowania fontów
 Name:		xorg-lib-libXft
-Version:	2.1.7
-Release:	0.03
+Version:	2.1.8
+Release:	0.1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libXft-%{version}.tar.bz2
-# Source0-md5:	b5cf0ee9c60f842687d5606aa41a079d
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/lib/libXft-%{version}.tar.bz2
+# Source0-md5:	efffd93b884fd6f2ffe11c6fdd1baa8a
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
-BuildRequires:	fontconfig-devel
+BuildRequires:	fontconfig-devel >= 2.2
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
-BuildRequires:	xorg-lib-libXrender-devel
+BuildRequires:	xorg-lib-libXrender-devel >= 0.8.2
 BuildRequires:	xorg-util-util-macros
 Obsoletes:	XFree86-xft
 Obsoletes:	XFree86-xft2
@@ -33,8 +33,8 @@ Summary:	Header files libXft development
 Summary(pl):	Pliki nag³ówkowe do biblioteki libXft
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	fontconfig-devel
-Requires:	xorg-lib-libXrender-devel
+Requires:	fontconfig-devel >= 2.2
+Requires:	xorg-lib-libXrender-devel >= 0.8.2
 Obsoletes:	XFree86-xft-devel
 Obsoletes:	XFree86-xft2-devel
 Obsoletes:	Xft-devel
@@ -100,7 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README
+%doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_libdir}/libXft.so.*.*.*
 
 %files devel

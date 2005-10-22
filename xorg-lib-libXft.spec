@@ -12,7 +12,7 @@ BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	fontconfig-devel >= 2.2
 BuildRequires:	libtool
-BuildRequires:	pkgconfig >= 0.19
+BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXrender-devel >= 0.8.2
 BuildRequires:	xorg-util-util-macros
 Obsoletes:	XFree86-xft

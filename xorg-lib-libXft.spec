@@ -29,8 +29,8 @@ Xft is a font rendering library for X.
 Xft jest bibliotek± s³u¿±c± do renderowania fontów dla X Window.
 
 %package devel
-Summary:	Header files libXft development
-Summary(pl):	Pliki nag³ówkowe do biblioteki libXft
+Summary:	Header files for libXft library
+Summary(pl):	Pliki nag³ówkowe biblioteki libXft
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	fontconfig-devel >= 2.2
@@ -45,7 +45,7 @@ Obsoletes:	xft-devel
 Xft is a font rendering library for X.
 
 This package contains the header files needed to develop programs that
-use these libXft.
+use libXft.
 
 %description devel -l pl
 Xft jest bibliotek± s³u¿±c± do renderowania fontów dla X Window.

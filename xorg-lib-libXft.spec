@@ -5,8 +5,8 @@ Version:	2.1.8.2
 Release:	0.1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC4/lib/libXft-%{version}.tar.bz2
-# Source0-md5:	3336bb11b0bfdbf5782db9cc8afe2150
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/lib/libXft-%{version}.tar.bz2
+# Source0-md5:	03f27b29ec11c8f9436c63fde62367b9
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake

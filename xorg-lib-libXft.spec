@@ -1,12 +1,12 @@
 Summary:	X Font Rendering library
 Summary(pl):	Biblioteka do renderowania fontów
 Name:		xorg-lib-libXft
-Version:	2.1.9
+Version:	2.1.10
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXft-%{version}.tar.bz2
-# Source0-md5:	37cfa75682d964263eaf69f2960cb8b2
+# Source0-md5:	5905c7687fba70d1cd69b2c0ab9a098c
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake

@@ -24,10 +24,14 @@ Obsoletes:	xft
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Xft is a font rendering library for X.
+Xft is a library that connects X applications with the FreeType font
+rasterization library. Xft uses fontconfig to locate fonts so it has
+no configuration files.
 
 %description -l pl
-Xft jest bibliotek± s³u¿±c± do renderowania fontów dla X Window.
+Xft to biblioteka ³±cz±ca aplikacje X z bibliotek± rasteryzacji fontów
+FreeType. Do odnajdywania fontów wykorzystuje bibliotekê fontconfig,
+wiêc Xft nie ma w³asnych plików konfiguracyjnych.
 
 %package devel
 Summary:	Header files for libXft library
@@ -43,16 +47,10 @@ Obsoletes:	libXft-devel
 Obsoletes:	xft-devel
 
 %description devel
-Xft is a font rendering library for X.
-
-This package contains the header files needed to develop programs that
-use libXft.
+Header files for libXft library.
 
 %description devel -l pl
-Xft jest bibliotek± s³u¿±c± do renderowania fontów dla X Window.
-
-Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
-u¿ywaj±cych biblioteki libXft.
+Pliki nag³ówkowe biblioteki libXft.
 
 %package static
 Summary:	Static libXft library
@@ -65,14 +63,10 @@ Obsoletes:	libXft-static
 Obsoletes:	xft-static
 
 %description static
-Xft is a font rendering library for X.
-
-This package contains the static libXft library.
+Static libXft library.
 
 %description static -l pl
-Xft jest bibliotek± s³u¿±c± do renderowania fontów dla X Window.
-
-Pakiet zawiera statyczn± bibliotekê libXft.
+Biblioteka statyczna libXft.
 
 %prep
 %setup -q -n libXft-%{version}

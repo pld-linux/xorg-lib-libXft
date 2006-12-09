@@ -5,7 +5,7 @@ Version:	2.1.12
 Release:	1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/archive/individual/app/libXft-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/archive/individual/lib/libXft-%{version}.tar.bz2
 # Source0-md5:	1309301e2d979bd475dc58325cb8c056
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57

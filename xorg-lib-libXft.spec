@@ -1,5 +1,5 @@
 Summary:	X Font Rendering library
-Summary(pl):	Biblioteka do renderowania fontÛw
+Summary(pl.UTF-8):   Biblioteka do renderowania font√≥w
 Name:		xorg-lib-libXft
 Version:	2.1.12
 Release:	1
@@ -28,14 +28,14 @@ Xft is a library that connects X applications with the FreeType font
 rasterization library. Xft uses fontconfig to locate fonts so it has
 no configuration files.
 
-%description -l pl
-Xft to biblioteka ≥±cz±ca aplikacje X z bibliotek± rasteryzacji fontÛw
-FreeType. Do odnajdywania fontÛw wykorzystuje bibliotekÍ fontconfig,
-wiÍc Xft nie ma w≥asnych plikÛw konfiguracyjnych.
+%description -l pl.UTF-8
+Xft to biblioteka ≈ÇƒÖczƒÖca aplikacje X z bibliotekƒÖ rasteryzacji font√≥w
+FreeType. Do odnajdywania font√≥w wykorzystuje bibliotekƒô fontconfig,
+wiƒôc Xft nie ma w≈Çasnych plik√≥w konfiguracyjnych.
 
 %package devel
 Summary:	Header files for libXft library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki libXft
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki libXft
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	fontconfig-devel >= 2.2
@@ -49,12 +49,12 @@ Obsoletes:	xft-devel
 %description devel
 Header files for libXft library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe biblioteki libXft.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki libXft.
 
 %package static
 Summary:	Static libXft library
-Summary(pl):	Biblioteka statyczna libXft
+Summary(pl.UTF-8):   Biblioteka statyczna libXft
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	XFree86-xft-static
@@ -65,7 +65,7 @@ Obsoletes:	xft-static
 %description static
 Static libXft library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna libXft.
 
 %prep

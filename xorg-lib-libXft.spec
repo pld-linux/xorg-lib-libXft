@@ -1,5 +1,5 @@
 Summary:	X Font Rendering library
-Summary(pl.UTF-8):   Biblioteka do renderowania fontów
+Summary(pl.UTF-8):	Biblioteka do renderowania fontów
 Name:		xorg-lib-libXft
 Version:	2.1.12
 Release:	1
@@ -35,7 +35,7 @@ więc Xft nie ma własnych plików konfiguracyjnych.
 
 %package devel
 Summary:	Header files for libXft library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libXft
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libXft
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	fontconfig-devel >= 2.2
@@ -54,7 +54,7 @@ Pliki nagłówkowe biblioteki libXft.
 
 %package static
 Summary:	Static libXft library
-Summary(pl.UTF-8):   Biblioteka statyczna libXft
+Summary(pl.UTF-8):	Biblioteka statyczna libXft
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	XFree86-xft-static

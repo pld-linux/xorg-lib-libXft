@@ -1,16 +1,23 @@
+#
+# Conditional build:
+%bcond_without	lcd             # use own LCD filtering instead of freetype's
+#
 Summary:	X Font Rendering library
 Summary(pl.UTF-8):	Biblioteka do renderowania fontów
 Name:		xorg-lib-libXft
 Version:	2.1.12
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/archive/individual/lib/libXft-%{version}.tar.bz2
 # Source0-md5:	1309301e2d979bd475dc58325cb8c056
+Patch0:		%{name}-lcd-filter.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	fontconfig-devel >= 2.2
+%{?with_lcd:BuildRequires:	freetype-devel >= 1:2.3.0}
+%{!?with_lcd:BuildRequires:	freetype-devel}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXrender-devel >= 0.8.2
@@ -70,6 +77,7 @@ Biblioteka statyczna libXft.
 
 %prep
 %setup -q -n libXft-%{version}
+%{?with_lcd:%patch0 -p1}
 
 %build
 %{__libtoolize}

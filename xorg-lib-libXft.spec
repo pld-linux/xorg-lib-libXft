@@ -22,6 +22,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXrender-devel >= 0.8.2
 BuildRequires:	xorg-util-util-macros
+%{?with_lcd:Requires:	freetype >= 1:2.3.0}
 Requires:	xorg-lib-libXrender >= 0.8.2
 Obsoletes:	XFree86-xft
 Obsoletes:	XFree86-xft2

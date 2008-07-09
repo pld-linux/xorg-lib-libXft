@@ -106,6 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_libdir}/libXft.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libXft.so.2
 
 %files devel
 %defattr(644,root,root,755)
@@ -115,8 +116,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_includedir}/X11/Xft
 %{_includedir}/X11/Xft/*.h
 %{_pkgconfigdir}/xft.pc
-%{_mandir}/man1/*.1*
-%{_mandir}/man3/*.3*
+%{_mandir}/man1/xft-config.1*
+%{_mandir}/man3/Xft.3*
 
 %files static
 %defattr(644,root,root,755)

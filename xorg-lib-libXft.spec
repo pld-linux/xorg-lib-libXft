@@ -5,23 +5,24 @@
 Summary:	X Font Rendering library
 Summary(pl.UTF-8):	Biblioteka do renderowania fontów
 Name:		xorg-lib-libXft
-Version:	2.1.13
-Release:	3
+Version:	2.1.14
+Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/archive/individual/lib/libXft-%{version}.tar.bz2
-# Source0-md5:	bc8881851f3bd8dcc625fac37350a1c6
+# Source0-md5:	254e62a233491e0e1251636536163e20
 Patch0:		%{name}-lcd-filter.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	fontconfig-devel >= 2.2
 %{?with_lcd:BuildRequires:	freetype-devel >= 1:2.3.0}
-%{!?with_lcd:BuildRequires:	freetype-devel}
+%{!?with_lcd:BuildRequires:	freetype-devel >= 2}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXrender-devel >= 0.8.2
-BuildRequires:	xorg-util-util-macros
+BuildRequires:	xorg-util-util-macros >= 1.3
+Requires:	fontconfig
 %{?with_lcd:Requires:	freetype >= 1:2.3.0}
 Requires:	xorg-lib-libXrender >= 0.8.2
 Obsoletes:	XFree86-xft
@@ -29,7 +30,6 @@ Obsoletes:	XFree86-xft2
 Obsoletes:	Xft
 Obsoletes:	libXft
 Obsoletes:	xft
-Requires:	fontconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -105,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README
+%doc AUTHORS COPYING ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libXft.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libXft.so.2
 

@@ -5,15 +5,15 @@
 Summary:	X Font Rendering library
 Summary(pl.UTF-8):	Biblioteka do renderowania fontów
 Name:		xorg-lib-libXft
-Version:	2.1.14
-Release:	2
+Version:	2.2.0
+Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/archive/individual/lib/libXft-%{version}.tar.bz2
-# Source0-md5:	254e62a233491e0e1251636536163e20
+# Source0-md5:	cce3c327258116493b753f157e0360c7
 Patch0:		%{name}-lcd-filter.patch
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	fontconfig-devel >= 2.2
 %{?with_lcd:BuildRequires:	freetype-devel >= 1:2.3.0}
@@ -21,7 +21,7 @@ BuildRequires:	fontconfig-devel >= 2.2
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXrender-devel >= 0.8.2
-BuildRequires:	xorg-util-util-macros >= 1.3
+BuildRequires:	xorg-util-util-macros >= 1.8
 Requires:	fontconfig
 %{?with_lcd:Requires:	freetype >= 1:2.3.0}
 Requires:	xorg-lib-libXrender >= 0.8.2
@@ -111,13 +111,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/xft-config
 %attr(755,root,root) %{_libdir}/libXft.so
 %{_libdir}/libXft.la
 %dir %{_includedir}/X11/Xft
 %{_includedir}/X11/Xft/*.h
 %{_pkgconfigdir}/xft.pc
-%{_mandir}/man1/xft-config.1*
 %{_mandir}/man3/Xft.3*
 
 %files static

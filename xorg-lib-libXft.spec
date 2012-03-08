@@ -1,29 +1,23 @@
-#
-# Conditional build:
-%bcond_without	lcd             # use own LCD filtering instead of freetype's
-#
 Summary:	X Font Rendering library
 Summary(pl.UTF-8):	Biblioteka do renderowania fontów
 Name:		xorg-lib-libXft
-Version:	2.2.0
+Version:	2.3.0
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/archive/individual/lib/libXft-%{version}.tar.bz2
-# Source0-md5:	cce3c327258116493b753f157e0360c7
-Patch0:		%{name}-lcd-filter.patch
+# Source0-md5:	bd0a8d8cace1dfbb963250bf3eb9a19a
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
-BuildRequires:	fontconfig-devel >= 2.2
-%{?with_lcd:BuildRequires:	freetype-devel >= 1:2.3.0}
-%{!?with_lcd:BuildRequires:	freetype-devel >= 2}
+BuildRequires:	fontconfig-devel >= 2.5.92
+BuildRequires:	freetype-devel >= 1:2.3.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXrender-devel >= 0.8.2
 BuildRequires:	xorg-util-util-macros >= 1.8
-Requires:	fontconfig
-%{?with_lcd:Requires:	freetype >= 1:2.3.0}
+Requires:	fontconfig >= 2.5.92
+Requires:	freetype >= 1:2.3.0
 Requires:	xorg-lib-libXrender >= 0.8.2
 Obsoletes:	XFree86-xft
 Obsoletes:	XFree86-xft2
@@ -47,7 +41,8 @@ Summary:	Header files for libXft library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libXft
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	fontconfig-devel >= 2.2
+Requires:	fontconfig-devel >= 2.5.92
+Requires:	freetype-devel >= 1:2.3.0
 Requires:	xorg-lib-libXrender-devel >= 0.8.2
 Obsoletes:	XFree86-xft-devel
 Obsoletes:	XFree86-xft2-devel
@@ -79,7 +74,6 @@ Biblioteka statyczna libXft.
 
 %prep
 %setup -q -n libXft-%{version}
-%{?with_lcd:%patch0 -p1}
 
 %build
 %{__libtoolize}

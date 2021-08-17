@@ -20,11 +20,11 @@ BuildRequires:	xorg-util-util-macros >= 1.8
 Requires:	fontconfig >= 2.5.92
 Requires:	freetype >= 1:2.3.0
 Requires:	xorg-lib-libXrender >= 0.8.2
-Obsoletes:	XFree86-xft
-Obsoletes:	XFree86-xft2
-Obsoletes:	Xft
-Obsoletes:	libXft
-Obsoletes:	xft
+Obsoletes:	XFree86-xft < 4.3.99.9
+Obsoletes:	XFree86-xft2 < 4.2.99.902
+Obsoletes:	Xft < 2.1.1
+Obsoletes:	libXft < 2.1.8
+Obsoletes:	xft < 2.1.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -45,11 +45,11 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	fontconfig-devel >= 2.5.92
 Requires:	freetype-devel >= 1:2.3.0
 Requires:	xorg-lib-libXrender-devel >= 0.8.2
-Obsoletes:	XFree86-xft-devel
-Obsoletes:	XFree86-xft2-devel
-Obsoletes:	Xft-devel
-Obsoletes:	libXft-devel
-Obsoletes:	xft-devel
+Obsoletes:	XFree86-xft-devel < 4.3.99.9
+Obsoletes:	XFree86-xft2-devel < 4.2.99.902
+Obsoletes:	Xft-devel < 2.1.1
+Obsoletes:	libXft-devel < 2.1.8
+Obsoletes:	xft-devel < 2.1.3
 
 %description devel
 Header files for libXft library.
@@ -62,10 +62,10 @@ Summary:	Static libXft library
 Summary(pl.UTF-8):	Biblioteka statyczna libXft
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
-Obsoletes:	XFree86-xft-static
-Obsoletes:	Xft-static
-Obsoletes:	libXft-static
-Obsoletes:	xft-static
+Obsoletes:	XFree86-xft-static < 4.3.99.9
+Obsoletes:	Xft-static < 2.1.1
+Obsoletes:	libXft-static < 2.1.8
+Obsoletes:	xft-static < 2.1.3
 
 %description static
 Static libXft library.

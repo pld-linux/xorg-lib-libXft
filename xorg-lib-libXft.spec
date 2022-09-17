@@ -1,12 +1,12 @@
 Summary:	X Font Rendering library
 Summary(pl.UTF-8):	Biblioteka do renderowania fontów
 Name:		xorg-lib-libXft
-Version:	2.3.4
+Version:	2.3.6
 Release:	1
 License:	MIT
 Group:		X11/Libraries
-Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXft-%{version}.tar.bz2
-# Source0-md5:	5004d8e21cdddfe53266b7293c1dfb1b
+Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXft-%{version}.tar.xz
+# Source0-md5:	9ec7ee390fa42fed423b1581e8ea9adc
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -14,9 +14,11 @@ BuildRequires:	fontconfig-devel >= 2.5.92
 BuildRequires:	freetype-devel >= 1:2.3.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXrender-devel >= 0.8.2
 BuildRequires:	xorg-util-util-macros >= 1.8
+BuildRequires:	xz
 Requires:	fontconfig >= 2.5.92
 Requires:	freetype >= 1:2.3.0
 Requires:	xorg-lib-libXrender >= 0.8.2
@@ -111,7 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_includedir}/X11/Xft
 %{_includedir}/X11/Xft/*.h
 %{_pkgconfigdir}/xft.pc
-%{_mandir}/man3/Xft.3*
+%{_mandir}/man3/Xft*.3*
 
 %files static
 %defattr(644,root,root,755)
